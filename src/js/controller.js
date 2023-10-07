@@ -141,6 +141,11 @@ const controlSort = btn => {
   // Render initial pagination
   paginationView.render(model.state.search);
 };
+
+const newFeature = () => {
+  console.log('Welcome to the application!');
+};
+
 // Publisher-Subscriber Pattern. addHandlerRender is the publisher. it publishes events using the addEventListener. controlRecipes is the subscriber. it subscribes to addHandlerRender because it is the callback function ofaddHandlerRender. we use the PS pattern to keep event listeners in the view (presentation logic) and control functions (application logic) in the controller.
 const init = () => {
   bookmarksView.addHandlerRender(controlBookmarks);
@@ -151,6 +156,6 @@ const init = () => {
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
   sortView.addHandlerSort(controlSort);
-  console.log('hi');
+  newFeature();
 };
 init();
