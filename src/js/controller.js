@@ -12,7 +12,7 @@ import sortView from './views/sortView.js';
 import 'core-js/stable'; // Polyfill everything else
 import 'regenerator-runtime/runtime'; // Polyfill async/await
 
-// This is so the sate of the page stays the same when we change the code
+// This is so the state of the page stays the same when we change the code
 // if (module.hot) {
 //   module.hot.accept();
 // }
@@ -142,10 +142,6 @@ const controlSort = btn => {
   paginationView.render(model.state.search);
 };
 
-const newFeature = () => {
-  console.log('Welcome to the application!');
-};
-
 // Publisher-Subscriber Pattern. addHandlerRender is the publisher. it publishes events using the addEventListener. controlRecipes is the subscriber. it subscribes to addHandlerRender because it is the callback function ofaddHandlerRender. we use the PS pattern to keep event listeners in the view (presentation logic) and control functions (application logic) in the controller.
 const init = () => {
   bookmarksView.addHandlerRender(controlBookmarks);
@@ -156,6 +152,5 @@ const init = () => {
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
   sortView.addHandlerSort(controlSort);
-  newFeature();
 };
 init();
